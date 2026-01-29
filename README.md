@@ -15,35 +15,28 @@
 
 ## Запуск локально
 
-1.  **Подготовка**:
-    ```bash
-    python -m venv venv
-    # Windows
-    venv\Scripts\activate
-    # Linux/Mac
-    source venv/bin/activate
-    ```
+1.  Подготовка:
 
-2.  **Зависимости**:
-    ```bash
+    python -m venv venv
+    venv\Scripts\activate
+
+
+2.  Зависимости:
+
     pip install -r requirements.txt
     playwright install chromium
-    ```
+
 
 3.  **Запуск**:
     ```bash
     pytest
     ```
     
-    Для запуска в headless режиме (без браузера):
+    Для запуска с браузером (headed):
     ```bash
-    pytest --headless
+    pytest --headed
     ```
 
     Можно поменять базовый URL:
-    ```bash
-    pytest --base-url http://another-url.com
-    ```
 
-## CI/CD
-Настроен GitHub Actions — тесты гоняются при каждом пуше в ветку.
+    pytest --base-url http://another-url.com
